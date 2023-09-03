@@ -1,0 +1,14 @@
+<div class="sa-detail">
+    <mat-card *ngIf="document">
+        <mat-card-header>
+            <mat-card-title >
+                <a mat-raised-button color="primary" routerLink="/pages/dashboard">Go Back</a>
+                <span>Title : {{ document.title }}</span>
+            </mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+            <iframe [src]="sanitizer.bypassSecurityTrustResourceUrl(document.pdfUrl)" width="100%"
+                height="800px"></iframe>
+        </mat-card-content>
+    </mat-card>
+</div>

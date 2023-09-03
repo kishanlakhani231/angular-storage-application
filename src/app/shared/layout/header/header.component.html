@@ -1,0 +1,20 @@
+<header class="sa-header">
+    <mat-toolbar color="primary">
+        <mat-toolbar-row>
+            <span>Storage App</span>
+            <div class="sa-routes" *ngIf="authService.getUserAuthLoginStatus() | async">
+                <a mat-button routerLinkActive="sa-header-active" routerLink="/pages/dashboard">Dashboard</a>
+                <a mat-button routerLinkActive="sa-header-active" routerLink="/pages/document/upload">Upload Document </a>
+
+            </div>
+            <div class="sa-header-right-side">
+                <ng-container *ngIf="authService.getUserAuthLoginStatus() | async; else elseTemplate">
+                    <button mat-button class="sa-header-active" (click)="logout()">Logout</button>
+                </ng-container>
+                <ng-template #elseTemplate>
+                    <a mat-button routerLink="/auth/login" routerLinkActive="sa-header-active">Login</a>
+                </ng-template>
+            </div>
+        </mat-toolbar-row>
+    </mat-toolbar>
+</header>

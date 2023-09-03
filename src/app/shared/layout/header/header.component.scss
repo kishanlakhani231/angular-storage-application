@@ -1,0 +1,16 @@
+.sa-header {
+    .sa-header-right-side {
+        display: flex;
+        flex: 1;
+        justify-content: flex-end;
+
+    }
+    .sa-routes {
+        margin:0 20px;
+        display: flex;
+        margin-top: 4px;
+    }
+    .sa-header-active {
+        border: 1px solid white;
+    }
+}

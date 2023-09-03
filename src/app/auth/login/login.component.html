@@ -1,0 +1,24 @@
+<div class="sa-login">
+    <mat-card>
+        <mat-card-title>Login</mat-card-title>
+        <mat-card-content>
+            <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+                <mat-form-field>
+                    <input matInput placeholder="Email" type="email" formControlName="email" required>
+                    <mat-error *ngIf="loginForm.get('email')?.hasError('required')">Email is required</mat-error>
+                    <mat-error *ngIf="loginForm.get('email')?.hasError('email')">Enter a valid email address</mat-error>
+                </mat-form-field>
+                <mat-form-field>
+                    <input matInput placeholder="Password" type="password" formControlName="password" required>
+                    <mat-error *ngIf="loginForm.get('password')?.hasError('required')">Password is required</mat-error>
+                </mat-form-field>
+                <button mat-raised-button color="primary" type="submit">Login</button>
+            </form>
+        </mat-card-content>
+    </mat-card>
+    <div class="sa-note">
+        <h3>Ues below cred for login the system.</h3>
+        <p>Email: jhondev@gmail.com</p>
+        <p>Password: Jh@n@4613</p>
+    </div>
+</div>
